@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Static Admin | Mohamed Eslam Design</title>
+    <link rel="icon" href="./assets/images/med-logo-icon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+    <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script defer src="./assets/js/site-config.js"></script>
+    <script defer src="./assets/js/admin.js"></script>
+  </head>
+  <body class="admin-page">
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"><img src="./assets/images/med-logo-mark.png" alt=""></span>
+        <span>
+          <strong>Mohamed Eslam</strong>
+          <small>Static Admin</small>
+        </span>
+      </a>
+      <div class="header-actions">
+        <a class="secondary-button" href="./index.html">
+          <i data-lucide="arrow-left"></i>
+          <span>رجوع للموقع</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <p class="section-kicker">إدارة Static</p>
+        <h1>تعديل بيانات الحجز وتصدير ملف الإعدادات.</h1>
+        <p>هذه الصفحة تعمل محليًا داخل المتصفح فقط. التغييرات لا تُحفظ على GitHub Pages تلقائيًا ولا تعتبر لوحة إدارة آمنة بدون Backend مثل Supabase أو Firebase أو Google Sheets API.</p>
+      </section>
+
+      <section class="admin-grid">
+        <form class="admin-panel" id="adminForm">
+          <h2>بيانات التواصل والدفع</h2>
+          <div class="form-grid">
+            <label>
+              <span>رقم واتساب الشركة</span>
+              <input name="whatsapp" type="text">
+            </label>
+            <label>
+              <span>رقم الهاتف</span>
+              <input name="phone" type="text">
+            </label>
+            <label>
+              <span>رسوم المعاينة</span>
+              <input name="inspectionFee" type="text">
+            </label>
+            <label>
+              <span>فودافون كاش</span>
+              <input name="vodafoneCash" type="text">
+            </label>
+            <label>
+              <span>إنستاباي</span>
+              <input name="instapay" type="text">
+            </label>
+            <label>
+              <span>تحويل بنكي</span>
+              <input name="bankTransfer" type="text">
+            </label>
+          </div>
+
+          <h2>الأيام والمواعيد</h2>
+          <label>
+            <span>المواعيد الافتراضية، افصل بينها بفاصلة</span>
+            <input name="defaultSlots" type="text">
+          </label>
+
+          <div class="weekday-admin" id="weekdayAdmin"></div>
+
+          <label>
+            <span>الأيام غير المتاحة، يوم في كل سطر أو مفصولة بفاصلة</span>
+            <textarea name="unavailableDates" rows="5"></textarea>
+          </label>
+
+          <label>
+            <span>مواعيد خاصة لأيام معينة بصيغة JSON</span>
+            <textarea name="dateSlots" rows="6"></textarea>
+          </label>
+
+          <label>
+            <span>مواعيد محجوزة داخل أيام متاحة بصيغة JSON</span>
+            <textarea name="blockedSlots" rows="6"></textarea>
+          </label>
+
+          <div class="admin-actions">
+            <button class="primary-button" type="button" data-export-js>
+              <i data-lucide="file-down"></i>
+              <span>Export site-config.js</span>
+            </button>
+            <button class="secondary-button" type="button" data-export-json>
+              <i data-lucide="braces"></i>
+              <span>Export JSON</span>
+            </button>
+          </div>
+          <p class="admin-status" data-admin-status></p>
+        </form>
+
+        <aside class="admin-panel">
+          <div class="calendar-head">
+            <button class="icon-button" type="button" data-admin-prev aria-label="الشهر السابق">
+              <i data-lucide="chevron-right"></i>
+            </button>
+            <strong data-admin-calendar-title></strong>
+            <button class="icon-button" type="button" data-admin-next aria-label="الشهر التالي">
+              <i data-lucide="chevron-left"></i>
+            </button>
+          </div>
+          <div class="weekday-row" data-admin-weekdays></div>
+          <div class="calendar-grid" data-admin-calendar></div>
+          <p class="admin-hint">اضغط على أي يوم لتبديله بين متاح وغير متاح داخل التصدير.</p>
+        </aside>
+      </section>
+
+      <section class="admin-panel output-panel">
+        <div class="output-head">
+          <h2>الملف الناتج</h2>
+          <div class="admin-actions">
+            <button class="secondary-button" type="button" data-copy-output>
+              <i data-lucide="copy"></i>
+              <span>نسخ</span>
+            </button>
+            <button class="secondary-button" type="button" data-download-output>
+              <i data-lucide="download"></i>
+              <span>تحميل</span>
+            </button>
+          </div>
+        </div>
+        <textarea class="output-textarea" data-output rows="16" spellcheck="false"></textarea>
+      </section>
+    </main>
+  </body>
+</html>
