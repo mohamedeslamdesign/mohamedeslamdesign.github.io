@@ -192,12 +192,17 @@
     const grid = $("#statsGrid");
     if (!grid) return;
     grid.innerHTML = (config.stats || [])
-      .map((stat) => `
-        <article class="stat-card">
-          <strong dir="ltr"><span data-counter="${Number(stat.value) || 0}">0</span>${escapeHtml(stat.suffix || "")}</strong>
-          <span>${escapeHtml(localize(stat.label))}</span>
-        </article>
-      `)
+      .map((stat) => {
+        const valueMarkup = stat.displayValue
+          ? escapeHtml(stat.displayValue)
+          : `<span data-counter="${Number(stat.value) || 0}">0</span>${escapeHtml(stat.suffix || "")}`;
+        return `
+          <article class="stat-card">
+            <strong dir="ltr">${valueMarkup}</strong>
+            <span>${escapeHtml(localize(stat.label))}</span>
+          </article>
+        `;
+      })
       .join("");
   }
 
@@ -539,16 +544,17 @@
     if (!list) return;
     const rows = [
       ["phone", t("contact.phone"), config.contact?.phone],
+      ["message-circle", t("contact.whatsapp"), config.contact?.whatsapp],
       ["mail", t("contact.email"), config.contact?.email],
       ["map-pin", t("contact.location"), config.contact?.address || config.company?.city]
-    ];
+    ].filter(([, , value]) => Boolean(value));
     list.innerHTML = rows
       .map(([iconName, label, value]) => `
-        <a class="contact-row" href="${escapeHtml(getContactHref(iconName, value))}" ${iconName === "map-pin" ? 'target="_blank" rel="noopener"' : ""}>
+        <a class="contact-row" href="${escapeHtml(getContactHref(iconName, value))}" ${["map-pin", "message-circle"].includes(iconName) ? 'target="_blank" rel="noopener"' : ""}>
           ${icon(iconName)}
           <span>
             <small>${escapeHtml(label)}</small>
-            <strong>${escapeHtml(value || "")}</strong>
+            <strong>${escapeHtml(iconName === "message-circle" ? formatWhatsAppDisplay(value) : value || "")}</strong>
           </span>
         </a>
       `)
@@ -558,6 +564,7 @@
   function getContactHref(iconName, value) {
     const raw = String(value || "");
     if (iconName === "phone") return `tel:${raw.replace(/[^\d+]/g, "")}`;
+    if (iconName === "message-circle") return `https://wa.me/${getWhatsAppNumber(raw)}`;
     if (iconName === "mail") return `mailto:${raw}`;
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(raw)}`;
   }
@@ -565,16 +572,18 @@
   function renderSocialLinks() {
     const social = config.contact?.social || {};
     const items = [
-      ["facebook", "Facebook", social.facebook],
-      ["instagram", "Instagram", social.instagram],
-      ["tiktok", "TikTok", social.tiktok]
-    ].filter((item) => Boolean(item[2]));
+      ["facebook", "Facebook", "FB", social.facebook],
+      ["instagram", "Instagram", "IG", social.instagram],
+      ["tiktok", "TikTok", "TK", social.tiktok]
+    ].map(([key, label, shortLabel, value]) => getSocialProfile(key, label, shortLabel, value))
+      .filter((item) => Boolean(item.url));
 
     const markup = items
-      .map(([key, label, href]) => `
-        <a class="social-link" href="${escapeHtml(href)}" target="_blank" rel="noopener" aria-label="${escapeHtml(label)}">
-          <span>${escapeHtml(key === "facebook" ? "FB" : key === "instagram" ? "IG" : "TK")}</span>
-          <strong>${escapeHtml(label)}</strong>
+      .map((item) => `
+        <a class="social-link" href="${escapeHtml(item.url)}" target="_blank" rel="noopener" aria-label="${escapeHtml(item.label)}">
+          <span>${escapeHtml(item.shortLabel)}</span>
+          <strong>${escapeHtml(item.label)}</strong>
+          ${item.metric ? `<em>${escapeHtml(item.metric)}</em>` : ""}
         </a>
       `)
       .join("");
@@ -583,6 +592,20 @@
       const holder = $(selector);
       if (holder) holder.innerHTML = markup;
     });
+  }
+
+  function getSocialProfile(key, fallbackLabel, shortLabel, value) {
+    if (!value) return { key, label: fallbackLabel, shortLabel, url: "", metric: "" };
+    if (typeof value === "string") {
+      return { key, label: fallbackLabel, shortLabel, url: value, metric: "" };
+    }
+    return {
+      key,
+      label: value.label ? localize(value.label) : fallbackLabel,
+      shortLabel,
+      url: value.url || "",
+      metric: localize(value.metric) || value.handle || ""
+    };
   }
 
   function renderFaq() {
@@ -811,9 +834,9 @@
       `${fields.notes}: ${formData.get("notes") || "-"}`,
       `${fields.date}: ${formData.get("date")}`,
       `${fields.slot}: ${formData.get("slot")}`,
-      `${fields.fee}: ${config.payment?.inspectionFee || ""}`
+      `${fields.status}: ${t("form.pendingConfirmation")}`
     ];
-    return `https://wa.me/${config.contact?.whatsapp || ""}?text=${encodeURIComponent(lines.join("\n"))}`;
+    return `https://wa.me/${getWhatsAppNumber(config.contact?.whatsapp)}?text=${encodeURIComponent(lines.join("\n"))}`;
   }
 
   function renderWhatsAppLinks() {
@@ -821,7 +844,7 @@
       ? "مرحبًا، أريد الاستفسار عن خدمات Mohamed Eslam Design."
       : "Hello, I would like to ask about Mohamed Eslam Design services.";
     $$("[data-whatsapp-link]").forEach((link) => {
-      link.href = `https://wa.me/${config.contact?.whatsapp || ""}?text=${encodeURIComponent(message)}`;
+      link.href = `https://wa.me/${getWhatsAppNumber(config.contact?.whatsapp)}?text=${encodeURIComponent(message)}`;
       link.target = "_blank";
       link.rel = "noopener";
     });
@@ -832,6 +855,18 @@
     $$("[data-phone-link]").forEach((link) => {
       if (phone) link.href = `tel:${phone}`;
     });
+  }
+
+  function getWhatsAppNumber(value) {
+    return String(value || "").replace(/\D/g, "");
+  }
+
+  function formatWhatsAppDisplay(value) {
+    const digits = getWhatsAppNumber(value);
+    if (digits.startsWith("20") && digits.length === 12) {
+      return `+20 ${digits.slice(2, 5)} ${digits.slice(5, 8)} ${digits.slice(8)}`;
+    }
+    return value || "";
   }
 
   function bindLightbox() {

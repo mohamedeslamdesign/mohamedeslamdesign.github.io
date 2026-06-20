@@ -30,9 +30,9 @@
     form.elements.whatsapp.value = working.contact?.whatsapp || "";
     form.elements.phone.value = working.contact?.phone || "";
     form.elements.inspectionFee.value = working.payment?.inspectionFee || "";
-    form.elements.vodafoneCash.value = working.payment?.vodafoneCash || "";
-    form.elements.instapay.value = working.payment?.instapay || "";
-    form.elements.bankTransfer.value = working.payment?.bankTransfer || "";
+    setFormValue(form, "vodafoneCash", working.payment?.vodafoneCash || "");
+    setFormValue(form, "instapay", working.payment?.instapay || "");
+    setFormValue(form, "bankTransfer", working.payment?.bankTransfer || "");
     form.elements.defaultSlots.value = (working.availability?.defaultSlots || []).join(", ");
     form.elements.unavailableDates.value = (working.availability?.unavailableDates || []).join("\n");
     form.elements.dateSlots.value = JSON.stringify(working.availability?.dateSlots || {}, null, 2);
@@ -94,9 +94,9 @@
     working.contact.whatsapp = form.elements.whatsapp.value.trim();
     working.contact.phone = form.elements.phone.value.trim();
     working.payment.inspectionFee = form.elements.inspectionFee.value.trim();
-    working.payment.vodafoneCash = form.elements.vodafoneCash.value.trim();
-    working.payment.instapay = form.elements.instapay.value.trim();
-    working.payment.bankTransfer = form.elements.bankTransfer.value.trim();
+    if (form.elements.vodafoneCash) working.payment.vodafoneCash = form.elements.vodafoneCash.value.trim();
+    if (form.elements.instapay) working.payment.instapay = form.elements.instapay.value.trim();
+    if (form.elements.bankTransfer) working.payment.bankTransfer = form.elements.bankTransfer.value.trim();
     working.availability.defaultSlots = splitList(form.elements.defaultSlots.value);
     working.availability.unavailableDates = parseDates(form.elements.unavailableDates.value);
     working.availability.availableWeekdays = $$('input[name="weekday"]:checked', form)
@@ -118,6 +118,10 @@
     working.contact = working.contact || {};
     working.payment = working.payment || {};
     working.availability = working.availability || {};
+  }
+
+  function setFormValue(form, name, value) {
+    if (form.elements[name]) form.elements[name].value = value;
   }
 
   function renderCalendar() {

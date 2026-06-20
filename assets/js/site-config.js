@@ -1,42 +1,54 @@
 window.MED_CONFIG = {
-  defaultLanguage: "en",
+  defaultLanguage: "ar",
   defaultTheme: "light",
-  settingsVersion: "light-en-mobile-spacing-v16",
+  settingsVersion: "booking-contact-social-v27",
   company: {
     name: "Mohamed Eslam Design",
     shortName: "MED",
     city: "Cairo, Egypt"
   },
   contact: {
-    phone: "+20 100 000 0000",
-    whatsapp: "201000000000",
-    email: "hello@mohamedeslamdesign.com",
+    phone: "+20 109 050 7966",
+    whatsapp: "201050723257",
+    email: "",
     address: "Cairo, Egypt",
     social: {
-      facebook: "https://www.facebook.com/mohammed.eslam",
-      instagram: "https://www.instagram.com/m7madislam",
-      tiktok: "https://www.tiktok.com/@mohammedeslam6"
+      facebook: {
+        url: "https://www.facebook.com/mohammed.eslam",
+        handle: "@mohammed.eslam",
+        metric: { en: "179K+ likes", ar: "179 ألف+ إعجاب" }
+      },
+      instagram: {
+        url: "https://www.instagram.com/m7madislam",
+        handle: "@m7madislam",
+        metric: { en: "67.8K followers", ar: "67.8 ألف متابع" }
+      },
+      tiktok: {
+        url: "https://www.tiktok.com/@mohammedeslam6",
+        handle: "@mohammedeslam6",
+        metric: { en: "95K followers", ar: "95 ألف متابع" }
+      }
     }
   },
   payment: {
-    inspectionFee: "500 EGP",
-    vodafoneCash: "+20 100 000 0000",
-    instapay: "mohamedeslam@instapay",
-    bankTransfer: "Bank transfer details placeholder"
+    inspectionFee: "No inspection fee",
+    vodafoneCash: "",
+    instapay: "",
+    bankTransfer: ""
+  },
+  links: {
+    designFacebook: "https://www.facebook.com/IME.DesignI",
+    giantFacebook: "https://www.facebook.com/profile.php?id=61590019417525",
+    giantAppStore: "https://apps.apple.com/eg/app/giant-finishing/id6760555338",
+    giantGooglePlay: "https://play.google.com/store/apps/details?id=com.giant.finishings"
   },
   availability: {
-    calendarWindowDays: 90,
-    availableWeekdays: [0, 1, 2, 3, 4, 6],
-    unavailableDates: ["2026-06-21", "2026-06-25", "2026-07-02", "2026-07-09"],
-    defaultSlots: ["11:00 AM", "1:00 PM", "4:00 PM", "7:00 PM"],
-    dateSlots: {
-      "2026-06-28": ["12:00 PM", "6:00 PM"],
-      "2026-07-05": ["10:00 AM", "2:00 PM", "5:00 PM"]
-    },
-    blockedSlots: {
-      "2026-06-22": ["1:00 PM"],
-      "2026-07-01": ["4:00 PM"]
-    }
+    calendarWindowDays: 120,
+    availableWeekdays: [0, 1, 2, 3, 4, 5, 6],
+    unavailableDates: [],
+    defaultSlots: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM", "6:00 PM", "8:00 PM"],
+    dateSlots: {},
+    blockedSlots: {}
   },
   heroImages: [
     {
@@ -74,24 +86,20 @@ window.MED_CONFIG = {
   ],
   stats: [
     {
-      value: 500,
-      suffix: "M+",
-      label: { en: "EGP Project Volume", ar: "جنيه حجم المشاريع" }
+      displayValue: "179K+",
+      label: { en: "Facebook Likes", ar: "إعجاب على فيسبوك" }
     },
     {
-      value: 12,
-      suffix: "",
-      label: { en: "Years Experience", ar: "سنة خبرة" }
+      displayValue: "95K",
+      label: { en: "TikTok Followers", ar: "متابع على تيك توك" }
     },
     {
-      value: 340,
-      suffix: "+",
-      label: { en: "Completed Projects", ar: "مشروع منجز" }
+      displayValue: "67.8K",
+      label: { en: "Instagram Followers", ar: "متابع على إنستجرام" }
     },
     {
-      value: 98,
-      suffix: "%",
-      label: { en: "Client Satisfaction", ar: "رضا العملاء" }
+      displayValue: "523.8K",
+      label: { en: "TikTok Likes", ar: "إعجاب على تيك توك" }
     }
   ],
   services: [
@@ -334,12 +342,16 @@ window.MED_CONFIG = {
         about: "About",
         services: "Services",
         portfolio: "Portfolio",
+        designs: "Designs",
+        giant: "Giant App",
         booking: "Booking",
         contact: "Contact"
       },
       cta: {
         book: "Book Inspection",
         portfolio: "View Portfolio",
+        designs: "Design Portfolio",
+        giant: "Giant Finishing App",
         whatsapp: "WhatsApp"
       },
       quick: {
@@ -365,8 +377,8 @@ window.MED_CONFIG = {
       },
       portfolio: {
         kicker: "Our Work",
-        title: "Selected project stories, not a crowded gallery.",
-        copy: "Each story groups a small number of strong photos around one execution idea, so visitors understand the work before opening more images."
+        title: "Selected project stories with a dedicated design portfolio.",
+        copy: "The homepage keeps a focused view of execution work, while the design portfolio opens the wider library of renders and concept directions."
       },
       process: {
         kicker: "Process",
@@ -386,25 +398,21 @@ window.MED_CONFIG = {
           { title: "Balanced taste", text: "Elegant decisions without loud over-design." },
           { title: "Execution awareness", text: "Design choices are connected to real site work." },
           { title: "Clear communication", text: "Clients understand the next step before it happens." },
-          { title: "Scalable structure", text: "The site and content are ready for new projects and services." }
+          { title: "Practical planning", text: "Every proposal is shaped around budget, timing, and daily use." }
         ]
       },
       testimonials: {
         kicker: "Testimonials",
-        title: "Client feedback placeholders ready for real reviews.",
-        items: [
-          { quote: "The team translated our needs into a calm and practical home.", author: "Residential Client" },
-          { quote: "Execution follow-up was clear, and material decisions felt considered.", author: "Fit-out Client" },
-          { quote: "The office concept gave the space a more professional presence.", author: "Commercial Client" }
-        ]
+        title: "Verified client feedback.",
+        items: []
       },
       booking: {
         kicker: "Book Inspection",
-        title: "Choose an available day and send your inspection request through WhatsApp.",
-        feeLabel: "Inspection Fee",
-        feeNote: "Booking is confirmed after sending the request and transfer proof on WhatsApp.",
-        slotsTitle: "Available time slots",
-        noSlots: "Select an available day to show time slots.",
+        title: "Choose your preferred day and time, then send the full request through WhatsApp.",
+        feeLabel: "Appointment Request",
+        feeNote: "No payment is required on the website. Mohamed Eslam Design will confirm availability manually on WhatsApp.",
+        slotsTitle: "Preferred time slots",
+        noSlots: "Choose a day to show preferred time slots.",
         unavailable: "Unavailable",
         selected: "Selected"
       },
@@ -421,10 +429,11 @@ window.MED_CONFIG = {
         send: "Send via WhatsApp",
         preparing: "Preparing WhatsApp message...",
         required: "Please complete the required fields and choose a date and time.",
-        success: "WhatsApp is opening with your booking details.",
+        success: "WhatsApp is opening with the full request details.",
         unitOptions: ["Apartment", "Villa", "Office", "Commercial", "Other"],
-        requestOptions: ["Design only", "Design & Execution", "Execution only", "Inspection only"],
-        messageTitle: "New inspection booking request",
+        requestOptions: ["Design only", "Design & Execution", "Execution only", "Inspection request"],
+        messageTitle: "New appointment request",
+        pendingConfirmation: "Pending Mohamed Eslam Design confirmation on WhatsApp.",
         messageFields: {
           fullName: "Full name",
           phone: "Phone",
@@ -437,22 +446,23 @@ window.MED_CONFIG = {
           notes: "Notes",
           date: "Preferred date",
           slot: "Preferred time",
-          fee: "Inspection fee"
+          status: "Appointment status"
         }
       },
       payment: {
-        title: "Payment placeholders",
-        vodafoneCash: "Vodafone Cash",
-        instapay: "Instapay",
-        bankTransfer: "Bank transfer"
+        title: "No online payment",
+        vodafoneCash: "Payment is not collected here",
+        instapay: "The team confirms next steps manually",
+        bankTransfer: "Send your request first on WhatsApp"
       },
       faq: {
         kicker: "FAQ",
         title: "Common questions before booking.",
         items: [
-          { q: "Does the inspection confirm the final execution cost?", a: "No. The inspection helps define the scope. A quotation is prepared after reviewing requirements and measurements." },
+          { q: "Is there an inspection fee on the website?", a: "No. The website collects the request details only. Mohamed Eslam Design confirms availability and next steps manually on WhatsApp." },
+          { q: "Does the request confirm the final execution cost?", a: "No. The request helps define the scope. A quotation is prepared after reviewing requirements and measurements." },
           { q: "Can I request design only?", a: "Yes. You can choose design only, execution only, inspection only, or a full design and execution workflow." },
-          { q: "How is the booking confirmed?", a: "Send the form through WhatsApp, then attach the transfer proof. The team will confirm the appointment manually." }
+          { q: "How is the appointment confirmed?", a: "Send the form through WhatsApp. The team will reply and confirm whether the preferred date and time are available." }
         ]
       },
       contact: {
@@ -460,12 +470,14 @@ window.MED_CONFIG = {
         title: "Ready to discuss your space?",
         copy: "Send the project details and the team will follow up with the next practical step.",
         phone: "Phone",
+        whatsapp: "WhatsApp",
         email: "Email",
         location: "Location"
       },
       footer: {
         copy: "Interior Design, Fit-out, and Design & Build for residential and commercial spaces.",
-        admin: "Static Admin"
+        designs: "Design Portfolio",
+        giant: "Giant Finishing App"
       },
       calendar: {
         weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -480,12 +492,16 @@ window.MED_CONFIG = {
         about: "عن الشركة",
         services: "الخدمات",
         portfolio: "الأعمال",
+        designs: "التصميمات",
+        giant: "تطبيق Giant",
         booking: "الحجز",
         contact: "التواصل"
       },
       cta: {
         book: "احجز معاينة",
         portfolio: "شاهد الأعمال",
+        designs: "سابقة التصميمات",
+        giant: "تطبيق Giant Finishing",
         whatsapp: "واتساب"
       },
       quick: {
@@ -511,8 +527,8 @@ window.MED_CONFIG = {
       },
       portfolio: {
         kicker: "أعمالنا",
-        title: "قصص مشاريع مختارة بدل معرض مزدحم.",
-        copy: "كل قصة تجمع عددًا محدودًا من الصور القوية حول فكرة تنفيذ واحدة، حتى يفهم الزائر العمل قبل فتح صور أكثر."
+        title: "قصص مشاريع مختارة مع صفحة مستقلة للتصميمات.",
+        copy: "الصفحة الرئيسية تعرض خلاصة قوية من أعمال التنفيذ، وصفحة التصميمات تفتح مكتبة الرندرات والاتجاهات التصميمية بتصنيف أوضح."
       },
       process: {
         kicker: "آلية العمل",
@@ -532,25 +548,21 @@ window.MED_CONFIG = {
           { title: "ذوق متوازن", text: "قرارات أنيقة بدون مبالغة أو ازدحام بصري." },
           { title: "وعي بالتنفيذ", text: "اختيارات التصميم مرتبطة بما يحدث فعليًا في الموقع." },
           { title: "تواصل واضح", text: "العميل يعرف الخطوة التالية قبل بدايتها." },
-          { title: "هيكل قابل للتوسع", text: "الموقع والمحتوى جاهزان لإضافة خدمات ومشاريع جديدة." }
+          { title: "تخطيط عملي", text: "كل تصور يتعامل مع الميزانية والوقت والاستخدام اليومي بوضوح." }
         ]
       },
       testimonials: {
         kicker: "آراء العملاء",
-        title: "أماكن مخصصة لآراء العملاء عند إضافتها لاحقًا.",
-        items: [
-          { quote: "الفريق ترجم احتياجاتنا إلى بيت هادئ وعملي.", author: "عميل سكني" },
-          { quote: "متابعة التنفيذ كانت واضحة واختيارات الخامات مدروسة.", author: "عميل تشطيبات" },
-          { quote: "تصور المكتب أعطى المساحة حضورًا أكثر احترافية.", author: "عميل تجاري" }
-        ]
+        title: "آراء عملاء موثقة.",
+        items: []
       },
       booking: {
         kicker: "حجز معاينة",
-        title: "اختر يومًا متاحًا وأرسل طلب المعاينة عبر واتساب.",
-        feeLabel: "رسوم المعاينة",
-        feeNote: "يتم تأكيد الحجز بعد إرسال الطلب وإرفاق إثبات التحويل على واتساب.",
-        slotsTitle: "المواعيد المتاحة",
-        noSlots: "اختر يومًا متاحًا لعرض المواعيد.",
+        title: "اختار اليوم والميعاد المناسبين لك، وابعت الطلب بكل التفاصيل على واتساب.",
+        feeLabel: "طلب ميعاد",
+        feeNote: "لا يوجد دفع أو رسوم معاينة داخل الموقع. فريق Mohamed Eslam Design سيؤكد توفر الميعاد على واتساب.",
+        slotsTitle: "المواعيد المفضلة",
+        noSlots: "اختر يومًا لعرض المواعيد المفضلة.",
         unavailable: "غير متاح",
         selected: "محدد"
       },
@@ -567,10 +579,11 @@ window.MED_CONFIG = {
         send: "إرسال عبر واتساب",
         preparing: "جاري تجهيز رسالة واتساب...",
         required: "من فضلك أكمل الحقول المطلوبة واختر اليوم والميعاد.",
-        success: "سيتم فتح واتساب ببيانات الحجز.",
-        unitOptions: ["Apartment", "Villa", "Office", "Commercial", "Other"],
-        requestOptions: ["Design only", "Design & Execution", "Execution only", "Inspection only"],
-        messageTitle: "طلب حجز معاينة جديد",
+        success: "سيتم فتح واتساب بكل تفاصيل الطلب.",
+        unitOptions: ["شقة", "فيلا", "مكتب", "تجاري", "أخرى"],
+        requestOptions: ["تصميم فقط", "تصميم وتنفيذ", "تنفيذ فقط", "طلب معاينة"],
+        messageTitle: "طلب ميعاد جديد",
+        pendingConfirmation: "بانتظار تأكيد فريق Mohamed Eslam Design على واتساب.",
         messageFields: {
           fullName: "الاسم الكامل",
           phone: "الهاتف",
@@ -583,22 +596,23 @@ window.MED_CONFIG = {
           notes: "ملاحظات",
           date: "اليوم المطلوب",
           slot: "الميعاد المطلوب",
-          fee: "رسوم المعاينة"
+          status: "حالة الميعاد"
         }
       },
       payment: {
-        title: "بيانات الدفع المؤقتة",
-        vodafoneCash: "فودافون كاش",
-        instapay: "إنستاباي",
-        bankTransfer: "تحويل بنكي"
+        title: "لا يوجد دفع داخل الموقع",
+        vodafoneCash: "الدفع غير مطلوب هنا",
+        instapay: "الفريق يؤكد الخطوات التالية يدويًا",
+        bankTransfer: "أرسل الطلب أولًا عبر واتساب"
       },
       faq: {
         kicker: "الأسئلة الشائعة",
         title: "أسئلة مهمة قبل الحجز.",
         items: [
-          { q: "هل المعاينة تحدد تكلفة التنفيذ النهائية؟", a: "لا. المعاينة تساعد على تحديد النطاق، وبعد مراجعة المتطلبات والمقاسات يتم تجهيز مقايسة." },
-          { q: "هل يمكن طلب تصميم فقط؟", a: "نعم. يمكنك اختيار تصميم فقط أو تنفيذ فقط أو معاينة فقط أو تصميم وتنفيذ كامل." },
-          { q: "كيف يتم تأكيد الحجز؟", a: "أرسل النموذج عبر واتساب ثم أرفق إثبات التحويل، وسيتم تأكيد الموعد يدويًا من الفريق." }
+          { q: "هل يوجد رسوم معاينة داخل الموقع؟", a: "لا. الموقع يجمع تفاصيل الطلب فقط، وفريق Mohamed Eslam Design يؤكد توفر الميعاد والخطوات التالية يدويًا على واتساب." },
+          { q: "هل الطلب يحدد تكلفة التنفيذ النهائية؟", a: "لا. الطلب يساعد على تحديد النطاق، وبعد مراجعة المتطلبات والمقاسات يتم تجهيز مقايسة." },
+          { q: "هل يمكن طلب تصميم فقط؟", a: "نعم. يمكنك اختيار تصميم فقط أو تنفيذ فقط أو طلب معاينة أو تصميم وتنفيذ كامل." },
+          { q: "كيف يتم تأكيد الميعاد؟", a: "أرسل النموذج عبر واتساب، وسيتم الرد عليك لتأكيد إن كان اليوم والميعاد المختاران متاحين." }
         ]
       },
       contact: {
@@ -606,12 +620,14 @@ window.MED_CONFIG = {
         title: "جاهز تناقش تفاصيل مساحتك؟",
         copy: "أرسل تفاصيل المشروع وسيتابع معك الفريق بالخطوة العملية التالية.",
         phone: "الهاتف",
+        whatsapp: "واتساب",
         email: "البريد الإلكتروني",
         location: "الموقع"
       },
       footer: {
         copy: "تصميم داخلي وتشطيبات وتصميم وتنفيذ للمساحات السكنية والتجارية.",
-        admin: "إدارة Static"
+        designs: "سابقة التصميمات",
+        giant: "تطبيق Giant Finishing"
       },
       calendar: {
         weekdays: ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],

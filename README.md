@@ -1,12 +1,12 @@
 # Mohamed Eslam Design
 
-موقع static احترافي لشركة Mohamed Eslam Design يعمل مباشرة على GitHub Pages بدون build step. النسخة الحالية عربية وداكنة افتراضيًا مع دعم تبديل اللغة والثيم.
+موقع static احترافي لشركة Mohamed Eslam Design يعمل مباشرة على GitHub Pages بدون build step. النسخة الحالية عربية وفاتحة افتراضيًا مع دعم تبديل اللغة والثيم.
 
 ## الملفات المهمة
 
 - `index.html`: الصفحة الرئيسية للموقع.
-- `admin.html`: أداة static لتعديل أيام الحجز والمواعيد وتصدير config جديد.
-- `assets/js/site-config.js`: كل البيانات القابلة للتعديل مثل أرقام التواصل، رسوم المعاينة، الصور، الإحصائيات، الخدمات، البورتفوليو، والأيام المتاحة.
+- `admin.html`: أداة static لتعديل بيانات التواصل وأيام الحجز والمواعيد وتصدير config جديد.
+- `assets/js/site-config.js`: كل البيانات القابلة للتعديل مثل أرقام التواصل، روابط السوشيال، أرقام المتابعين، الصور، الإحصائيات، الخدمات، البورتفوليو، والأيام المتاحة.
 - `assets/js/main.js`: منطق اللغة، لايت/دارك، البورتفوليو، التقويم، ورسالة واتساب.
 - `assets/css/styles.css`: تصميم الموقع responsive للـ desktop والموبايل.
 - `assets/images/`: صور الهيرو والبورتفوليو بمسارات relative مناسبة لـ GitHub Pages.
@@ -21,7 +21,7 @@
 
 - اسم الشركة أو المدينة داخل `company`.
 - رقم الهاتف وواتساب والبريد داخل `contact`.
-- روابط Facebook وInstagram وTikTok داخل `contact.social`.
+- روابط Facebook وInstagram وTikTok وأرقام المتابعين داخل `contact.social`.
 - الخدمات داخل `services`.
 - الإحصائيات داخل `stats`.
 - نصوص العربي والإنجليزي داخل `content`.
@@ -31,37 +31,51 @@
 رقم واتساب يجب أن يكون بصيغة دولية بدون `+` داخل `contact.whatsapp`، مثل:
 
 ```js
-whatsapp: "201000000000"
+whatsapp: "201050723257"
 ```
 
 روابط السوشيال الحالية:
 
 ```js
 social: {
-  facebook: "https://www.facebook.com/mohammed.eslam",
-  instagram: "https://www.instagram.com/m7madislam",
-  tiktok: "https://www.tiktok.com/@mohammedeslam6"
+  facebook: {
+    url: "https://www.facebook.com/mohammed.eslam",
+    handle: "@mohammed.eslam",
+    metric: { en: "179K+ likes", ar: "179 ألف+ إعجاب" }
+  },
+  instagram: {
+    url: "https://www.instagram.com/m7madislam",
+    handle: "@m7madislam",
+    metric: { en: "67.8K followers", ar: "67.8 ألف متابع" }
+  },
+  tiktok: {
+    url: "https://www.tiktok.com/@mohammedeslam6",
+    handle: "@mohammedeslam6",
+    metric: { en: "95K followers", ar: "95 ألف متابع" }
+  }
 }
 ```
 
-## تعديل رسوم المعاينة والدفع
+## إلغاء رسوم المعاينة داخل الموقع
 
 داخل `assets/js/site-config.js` عدل:
 
 ```js
 payment: {
-  inspectionFee: "500 EGP",
-  vodafoneCash: "+20 100 000 0000",
-  instapay: "mohamedeslam@instapay",
-  bankTransfer: "Bank transfer details placeholder"
+  inspectionFee: "No inspection fee",
+  vodafoneCash: "",
+  instapay: "",
+  bankTransfer: ""
 }
 ```
+
+الموقع لا يجمع دفع ولا يطلب إثبات تحويل. العميل يختار اليوم والميعاد المفضلين، ثم يرسل التفاصيل على واتساب، والفريق يؤكد التوفر يدويًا.
 
 ## تعديل الأيام المتاحة
 
 داخل `availability`:
 
-- `availableWeekdays`: أيام الأسبوع المتاحة، حيث الأحد `0` والسبت `6`.
+- `availableWeekdays`: أيام الأسبوع المتاحة، حيث الأحد `0` والسبت `6`. القيمة الحالية تفتح كل أيام الأسبوع.
 - `unavailableDates`: أيام محددة غير متاحة بصيغة `YYYY-MM-DD`.
 - `defaultSlots`: المواعيد الافتراضية لكل يوم متاح.
 - `dateSlots`: مواعيد خاصة ليوم محدد.
@@ -71,21 +85,17 @@ payment: {
 
 ```js
 availability: {
-  availableWeekdays: [0, 1, 2, 3, 4, 6],
-  unavailableDates: ["2026-06-25"],
-  defaultSlots: ["11:00 AM", "1:00 PM", "4:00 PM"],
-  dateSlots: {
-    "2026-07-05": ["10:00 AM", "2:00 PM"]
-  },
-  blockedSlots: {
-    "2026-07-01": ["4:00 PM"]
-  }
+  availableWeekdays: [0, 1, 2, 3, 4, 5, 6],
+  unavailableDates: [],
+  defaultSlots: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM", "6:00 PM", "8:00 PM"],
+  dateSlots: {},
+  blockedSlots: {}
 }
 ```
 
 ## استخدام admin.html
 
-افتح `admin.html` في المتصفح. يمكنك تعديل رقم واتساب، رسوم المعاينة، الأيام غير المتاحة، والـ time slots، ثم الضغط على `Export site-config.js`.
+افتح `admin.html` في المتصفح. يمكنك تعديل رقم واتساب، رقم الهاتف، حالة رسوم المعاينة، الأيام غير المتاحة، والـ time slots، ثم الضغط على `Export site-config.js`.
 
 مهم: هذه الصفحة static فقط. هي لا تحفظ التغييرات عالميًا ولا تعتبر لوحة إدارة آمنة بدون Backend. بعد التصدير، استبدل محتوى `assets/js/site-config.js` بالمحتوى الناتج ثم ارفع التعديل إلى GitHub.
 
