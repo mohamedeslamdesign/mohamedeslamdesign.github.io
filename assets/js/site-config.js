@@ -1,7 +1,7 @@
 window.MED_CONFIG = {
   defaultLanguage: "ar",
   defaultTheme: "light",
-  settingsVersion: "booking-contact-social-v27",
+  settingsVersion: "booking-contact-social-v28",
   company: {
     name: "Mohamed Eslam Design",
     shortName: "MED",
