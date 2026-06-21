@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="سابقة أعمال التصميمات والرندرات من Mohamed Eslam Design مصنفة حسب نوع المساحة.">
+    <meta name="description" content="Design portfolio and rendered concepts from Mohamed Eslam Design, organized by room type and use case.">
     <meta name="theme-color" content="#F3EEE4">
-    <title>سابقة التصميمات | Mohamed Eslam Design</title>
+    <title>Design Portfolio | Mohamed Eslam Design</title>
     <link rel="icon" href="./assets/images/med-logo-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="./assets/images/med-logo-icon.png">
     <link rel="preload" href="./assets/images/MohamedEslamDesigns/IMG-20260617-WA0202.jpg" as="image">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=booking-contact-social-v31">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=booking-contact-social-v32">
     <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script defer src="./assets/js/site-config.js?v=booking-contact-social-v31"></script>
-    <script defer src="./assets/js/showcase.js?v=booking-contact-social-v31"></script>
+    <script defer src="./assets/js/site-config.js?v=booking-contact-social-v32"></script>
+    <script defer src="./assets/js/showcase.js?v=booking-contact-social-v32"></script>
   </head>
   <body class="showcase-page">
-    <a class="skip-link" href="#main">تجاوز إلى المحتوى</a>
+    <a class="skip-link" href="#main" data-i18n="common.skip">Skip to content</a>
 
     <header class="site-header" data-header>
       <a class="brand" href="./index.html#home" aria-label="Mohamed Eslam Design">
@@ -26,21 +26,22 @@
         </span>
       </a>
 
-      <nav class="main-nav" data-nav aria-label="Primary navigation">
-        <a href="./index.html#about">عن الشركة</a>
-        <a href="./index.html#services">الخدمات</a>
-        <a href="./index.html#portfolio">الأعمال</a>
-        <a class="is-active" href="./designs.html">التصميمات</a>
-        <a href="./giant-finishing.html">تطبيق Giant</a>
-        <a href="./index.html#booking">الحجز</a>
-        <a href="./index.html#contact">التواصل</a>
+      <nav class="main-nav" data-nav aria-label="Primary navigation" data-showcase-aria="common.primaryNav">
+        <a href="./index.html#about" data-i18n="nav.about">About</a>
+        <a href="./index.html#services" data-i18n="nav.services">Services</a>
+        <a href="./index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+        <a class="is-active" href="./designs.html" data-i18n="nav.designs">Designs</a>
+        <a href="./giant-finishing.html" data-i18n="nav.giant">Giant App</a>
+        <a href="./index.html#booking" data-i18n="nav.booking">Booking</a>
+        <a href="./index.html#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="header-actions">
-        <button class="icon-button" type="button" data-theme-toggle aria-label="تبديل الثيم" title="تبديل الثيم">
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle dark mode" title="Toggle theme">
           <i data-lucide="moon"></i>
         </button>
-        <button class="icon-button menu-button" type="button" data-menu-toggle aria-label="فتح القائمة" aria-expanded="false">
+        <button class="pill-button" type="button" data-language-toggle aria-label="Switch language">AR</button>
+        <button class="icon-button menu-button" type="button" data-menu-toggle aria-label="Open menu" aria-expanded="false">
           <i data-lucide="menu"></i>
         </button>
       </div>
@@ -49,18 +50,18 @@
     <main id="main">
       <section class="showcase-hero design-showcase-hero" aria-labelledby="design-title">
         <div class="showcase-inner">
-          <a class="crumb-link" href="./index.html#portfolio">العودة للأعمال الرئيسية</a>
-          <p class="eyebrow">ME Design Gallery</p>
-          <h1 id="design-title">سابقة أعمال التصميمات</h1>
-          <p class="hero-copy">مكتبة مستقلة للرندرات والاتجاهات التصميمية، مرتبة حسب نوع المساحة حتى يرى العميل عمق التجربة بدون ازدحام الصفحة الرئيسية.</p>
+          <a class="crumb-link" href="./index.html#portfolio" data-showcase-i18n="designs.hero.crumb">Back to main portfolio</a>
+          <p class="eyebrow" data-showcase-i18n="designs.hero.eyebrow">Design Portfolio</p>
+          <h1 id="design-title" data-showcase-i18n="designs.hero.title">A focused gallery for design concepts and rendered spaces.</h1>
+          <p class="hero-copy" data-showcase-i18n="designs.hero.copy">Explore residential design directions organized by room type, so each client can find references that match their space and lifestyle.</p>
           <div class="showcase-actions">
             <a class="primary-button" href="#" data-whatsapp-link>
               <i data-lucide="message-circle"></i>
-              <span>اسأل عن تصميم مساحتك</span>
+              <span data-showcase-i18n="designs.hero.primaryCta">Ask about your design</span>
             </a>
             <a class="secondary-button" href="https://www.facebook.com/IME.DesignI" target="_blank" rel="noopener">
               <i data-lucide="external-link"></i>
-              <span>صفحة ME Design</span>
+              <span data-showcase-i18n="designs.hero.secondaryCta">Facebook page</span>
             </a>
           </div>
         </div>
@@ -69,68 +70,81 @@
       <section class="section showcase-intro">
         <div class="section-heading split-heading">
           <div>
-            <p class="section-kicker">تصنيف واضح</p>
-            <h2>كل مساحة لها سياقها، لذلك فصلنا الأعمال حسب الاستخدام.</h2>
+            <p class="section-kicker" data-showcase-i18n="designs.collections.kicker">Organized Collections</p>
+            <h2 data-showcase-i18n="designs.collections.title">Every space has its own needs, so the gallery is grouped by use.</h2>
           </div>
-          <p>الصفحة تجمع التصميمات السابقة في تجربة واحدة: غرف نوم، ريسبشن، حمامات، مطابخ، دريسنج، ومساحات طعام. الهدف أن يصل العميل للأمثلة الأقرب لاحتياجه بسرعة.</p>
+          <p data-showcase-i18n="designs.collections.copy">Browse bedrooms, living rooms, bathrooms, kitchens, dressing areas, and dining spaces through clear albums built for quick comparison.</p>
         </div>
         <div class="design-collections" id="designCollections"></div>
+      </section>
+
+      <section class="section showcase-gallery-section">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker" data-showcase-i18n="designs.gallery.kicker">Full Gallery</p>
+            <h2 data-showcase-i18n="designs.gallery.title">Filter the design library or open a focused album.</h2>
+          </div>
+          <p data-showcase-i18n="designs.gallery.copy">Use the filters to compare design styles by room type, then open any image to browse the selected album in a larger view.</p>
+        </div>
+        <div class="filter-strip" id="designFilters"></div>
+        <div class="design-album-bar" id="designAlbumBar"></div>
+        <div class="design-gallery" id="designGallery"></div>
       </section>
 
       <section class="section showcase-downloads-section">
         <div class="section-heading split-heading">
           <div>
-            <p class="section-kicker">ملفات تعريفية</p>
-            <h2>ملفات PDF من أرشيف التصميمات متاحة للعرض.</h2>
+            <p class="section-kicker" data-showcase-i18n="designs.downloads.kicker">Portfolio Files</p>
+            <h2 data-showcase-i18n="designs.downloads.title">Curated PDF presentations are available for review.</h2>
           </div>
-          <p>استخدمنا الملفات الموجودة في فولدر التصميمات كمواد مساندة لمن يريد رؤية البروفايل أو عروض مجمعة.</p>
+          <p data-showcase-i18n="designs.downloads.copy">Download selected design presentations to review the studio profile, visual direction, and additional project references.</p>
         </div>
         <div class="showcase-downloads">
           <a class="download-card" href="./assets/images/MohamedEslamDesigns/ME%20Design%20Experience.pdf" target="_blank" rel="noopener">
             <i data-lucide="file-text"></i>
             <span>
-              <strong>ME Design Experience</strong>
-              <small>بروفايل التصميمات الكامل</small>
+              <strong data-showcase-i18n="designs.downloads.profileTitle">Design Experience Profile</strong>
+              <small data-showcase-i18n="designs.downloads.profileCopy">Main design portfolio presentation</small>
             </span>
           </a>
           <a class="download-card" href="./assets/images/MohamedEslamDesigns/1%20(1).pdf" target="_blank" rel="noopener">
             <i data-lucide="file-text"></i>
             <span>
-              <strong>Design File 01</strong>
-              <small>مجموعة أعمال إضافية</small>
+              <strong data-showcase-i18n="designs.downloads.presentationOneTitle">Selected Design Presentation</strong>
+              <small data-showcase-i18n="designs.downloads.presentationOneCopy">Additional residential references</small>
             </span>
           </a>
           <a class="download-card" href="./assets/images/MohamedEslamDesigns/F.pdf" target="_blank" rel="noopener">
             <i data-lucide="file-text"></i>
             <span>
-              <strong>Design File 02</strong>
-              <small>عرض مختصر من الأرشيف</small>
+              <strong data-showcase-i18n="designs.downloads.presentationTwoTitle">Compact Design Preview</strong>
+              <small data-showcase-i18n="designs.downloads.presentationTwoCopy">Short visual presentation</small>
             </span>
           </a>
         </div>
       </section>
     </main>
 
-    <aside class="quick-actions" aria-label="Quick contact">
-      <a class="quick-action" href="./index.html#booking" aria-label="حجز معاينة">
+    <aside class="quick-actions" aria-label="Quick contact" data-showcase-aria="common.quickContact">
+      <a class="quick-action" href="./index.html#booking" aria-label="Book inspection" data-showcase-aria="common.bookInspection">
         <i data-lucide="clipboard-check"></i>
-        <span>احجز</span>
+        <span data-i18n="quick.booking">Book</span>
       </a>
-      <a class="quick-action" href="#" data-whatsapp-link aria-label="واتساب">
+      <a class="quick-action" href="#" data-whatsapp-link aria-label="WhatsApp" data-showcase-aria="common.whatsapp">
         <i data-lucide="message-circle"></i>
-        <span>واتساب</span>
+        <span data-i18n="quick.whatsapp">WhatsApp</span>
       </a>
-      <a class="quick-action" href="tel:+201090507966" data-phone-link aria-label="اتصال">
+      <a class="quick-action" href="tel:+201090507966" data-phone-link aria-label="Call" data-showcase-aria="common.call">
         <i data-lucide="phone-call"></i>
-        <span>اتصل</span>
+        <span data-i18n="quick.call">Call</span>
       </a>
     </aside>
 
     <div class="lightbox" data-showcase-lightbox aria-hidden="true">
-      <button class="icon-button lightbox-close" type="button" data-showcase-close aria-label="إغلاق الصورة">
+      <button class="icon-button lightbox-close" type="button" data-showcase-close aria-label="Close image" data-showcase-aria="lightbox.close">
         <i data-lucide="x"></i>
       </button>
-      <button class="icon-button lightbox-nav prev" type="button" data-showcase-prev aria-label="الصورة السابقة">
+      <button class="icon-button lightbox-nav prev" type="button" data-showcase-prev aria-label="Previous image" data-showcase-aria="lightbox.prev">
         <i data-lucide="chevron-left"></i>
       </button>
       <figure>
@@ -140,9 +154,9 @@
           <strong data-showcase-caption></strong>
           <small data-showcase-count></small>
         </figcaption>
-        <div class="lightbox-thumbs" data-showcase-thumbs aria-label="صور الألبوم"></div>
+        <div class="lightbox-thumbs" data-showcase-thumbs aria-label="Album images" data-showcase-aria="lightbox.thumbs"></div>
       </figure>
-      <button class="icon-button lightbox-nav next" type="button" data-showcase-next aria-label="الصورة التالية">
+      <button class="icon-button lightbox-nav next" type="button" data-showcase-next aria-label="Next image" data-showcase-aria="lightbox.next">
         <i data-lucide="chevron-right"></i>
       </button>
     </div>
@@ -150,12 +164,12 @@
     <footer class="site-footer">
       <div class="footer-brand">
         <img class="footer-logo" src="./assets/images/med-logo-lockup.png" alt="Mohammed Eslam Design logo">
-        <p>تصميم داخلي وتشطيبات وتصميم وتنفيذ للمساحات السكنية والتجارية.</p>
+        <p data-i18n="footer.copy">Interior Design, Fit-out, and Design & Build for residential and commercial spaces.</p>
       </div>
       <div class="footer-links">
-        <a href="./index.html#booking">احجز معاينة</a>
-        <a href="./giant-finishing.html">تطبيق Giant Finishing</a>
-        <a href="https://www.facebook.com/IME.DesignI" target="_blank" rel="noopener">ME Design Facebook</a>
+        <a href="./index.html#booking" data-i18n="cta.book">Book Inspection</a>
+        <a href="./giant-finishing.html" data-i18n="footer.giant">Giant Finishing App</a>
+        <a href="https://www.facebook.com/IME.DesignI" target="_blank" rel="noopener" data-showcase-i18n="designs.footer.facebook">Design Facebook</a>
       </div>
     </footer>
   </body>
