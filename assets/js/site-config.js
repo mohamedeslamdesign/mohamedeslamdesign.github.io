@@ -1,7 +1,7 @@
 window.MED_CONFIG = {
   defaultLanguage: "en",
   defaultTheme: "light",
-  settingsVersion: "booking-contact-social-v30",
+  settingsVersion: "booking-contact-social-v31",
   company: {
     name: "Mohamed Eslam Design",
     shortName: "MED",
@@ -168,10 +168,12 @@ window.MED_CONFIG = {
     { key: "kitchen", label: { en: "Kitchens", ar: "مطابخ" } },
     { key: "bathroom", label: { en: "Bathrooms", ar: "حمامات" } },
     { key: "detail", label: { en: "Details", ar: "تفاصيل" } },
+    { key: "profile", label: { en: "Mohamed Eslam", ar: "محمد إسلام" } },
     { key: "all", label: { en: "All", ar: "الكل" } }
   ],
   portfolio: [
     { category: "living", featured: true, image: "./assets/images/IMG-20260617-WA0079.jpg", title: { en: "Living & Dining Completion", ar: "تنفيذ معيشة وسفرة" }, meta: { en: "Residential | Design & Build", ar: "سكني | تصميم وتنفيذ" } },
+    { category: "profile", featured: true, image: "./assets/images/IMG-20260617-WA0030.jpg", title: { en: "Mohamed Eslam", ar: "محمد إسلام" }, meta: { en: "Founder | Interior Designer", ar: "المؤسس | مصمم داخلي" } },
     { category: "kitchen", featured: true, image: "./assets/images/IMG-20260617-WA0073.jpg", title: { en: "Integrated Kitchen View", ar: "منظور مطبخ متكامل" }, meta: { en: "Kitchen | Hidden lighting", ar: "مطبخ | إضاءة مخفية" } },
     { category: "bathroom", featured: true, image: "./assets/images/IMG-20260617-WA0031.jpg", title: { en: "Kitchen & Bathroom Axis", ar: "محور مطبخ وحمام" }, meta: { en: "Fit-out | Wet areas", ar: "تشطيبات | مناطق رطبة" } },
     { category: "bathroom", featured: true, image: "./assets/images/IMG-20260617-WA0032.jpg", title: { en: "Marble Bathroom Detail", ar: "تفاصيل حمام رخامي" }, meta: { en: "Bathroom | Material execution", ar: "حمام | تنفيذ خامات" } },
@@ -189,11 +191,15 @@ window.MED_CONFIG = {
     { category: "living", image: "./assets/images/IMG-20260617-WA0045.jpg", title: { en: "Living Room Side Angle", ar: "زاوية جانبية للمعيشة" }, meta: { en: "Living | Finished space", ar: "معيشة | مساحة مكتملة" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0046.jpg", title: { en: "Wall Wash Lighting", ar: "إضاءة حوائط خطية" }, meta: { en: "Fit-out | Light design", ar: "تشطيبات | تصميم إضاءة" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0047.jpg", title: { en: "Minimal Wall Finish", ar: "تشطيب حائط هادئ" }, meta: { en: "Fit-out | Clean delivery", ar: "تشطيبات | تسليم نظيف" } },
+    { category: "fitout", image: "./assets/images/IMG-20260617-WA0049.jpg", title: { en: "Site Follow-up Moment", ar: "متابعة تنفيذ بالموقع" }, meta: { en: "Site | Engineering follow-up", ar: "موقع | متابعة هندسية" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0050.jpg", title: { en: "Corridor Door Finish", ar: "تشطيب ممر وأبواب" }, meta: { en: "Fit-out | Doors & walls", ar: "تشطيبات | أبواب وحوائط" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0051.jpg", title: { en: "Wide Finished Hall", ar: "صالة واسعة منفذة" }, meta: { en: "Fit-out | Final delivery", ar: "تشطيبات | تسليم نهائي" } },
     { category: "kitchen", image: "./assets/images/IMG-20260617-WA0054.jpg", title: { en: "Bar & Kitchen Detail", ar: "تفاصيل بار ومطبخ" }, meta: { en: "Kitchen | Counter lighting", ar: "مطبخ | إضاءة كاونتر" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0059.jpg", title: { en: "Bedroom TV Wall", ar: "حائط تلفزيون غرفة نوم" }, meta: { en: "Bedroom | Storage", ar: "غرفة نوم | تخزين" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0060.jpg", title: { en: "Bedroom & Dressing", ar: "غرفة نوم ودريسنج" }, meta: { en: "Bedroom | Wardrobe lighting", ar: "غرفة نوم | إضاءة دولاب" } },
+    { category: "profile", image: "./assets/images/IMG-20260617-WA0070.jpg", title: { en: "Studio Brand Banner", ar: "بانر هوية الاستوديو" }, meta: { en: "Brand | Mohamed Eslam", ar: "هوية | محمد إسلام" } },
+    { category: "profile", image: "./assets/images/IMG-20260617-WA0071.jpg", title: { en: "Mohamed Eslam Portrait", ar: "بورتريه محمد إسلام" }, meta: { en: "Founder | Brand image", ar: "المؤسس | صورة هوية" } },
+    { category: "profile", image: "./assets/images/IMG-20260617-WA0074.jpg", title: { en: "Black & White Portrait", ar: "بورتريه أبيض وأسود" }, meta: { en: "Founder | Editorial", ar: "المؤسس | صورة تحريرية" } },
     { category: "bathroom", image: "./assets/images/IMG-20260617-WA0077.jpg", title: { en: "Bathroom Warm Detail", ar: "تفاصيل حمام دافئة" }, meta: { en: "Bathroom | Niche lighting", ar: "حمام | إضاءة داخلية" } },
     { category: "bedroom", featured: true, image: "./assets/images/IMG-20260617-WA0082.jpg", title: { en: "Master Bedroom Suite", ar: "غرفة نوم رئيسية" }, meta: { en: "Bedroom | Interior design", ar: "غرفة نوم | تصميم داخلي" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0083.jpg", title: { en: "Bedroom Media Wall", ar: "حائط تلفزيون غرفة نوم" }, meta: { en: "Bedroom | Curtains & wall", ar: "غرفة نوم | ستائر وحائط" } },
@@ -303,6 +309,24 @@ window.MED_CONFIG = {
         "./assets/images/IMG-20260617-WA0032.jpg",
         "./assets/images/IMG-20260617-WA0033.jpg",
         "./assets/images/IMG-20260617-WA0077.jpg"
+      ]
+    },
+    {
+      key: "founder-site",
+      label: { en: "Founder Profile", ar: "محمد إسلام" },
+      title: { en: "Design leadership behind the details.", ar: "قيادة تصميم تقف وراء التفاصيل." },
+      summary: {
+        en: "A polished brand presence for Mohamed Eslam, reflecting the design direction, client trust, and disciplined decisions behind each project.",
+        ar: "حضور مهني راقٍ لمحمد إسلام يعكس اتجاه التصميم، ثقة العميل، والقرارات المنضبطة وراء كل مشروع."
+      },
+      proof: {
+        en: ["Design direction", "Client trust", "Clear approvals"],
+        ar: ["اتجاه تصميم", "ثقة العميل", "اعتمادات واضحة"]
+      },
+      images: [
+        "./assets/images/IMG-20260617-WA0030.jpg",
+        "./assets/images/IMG-20260617-WA0071.jpg",
+        "./assets/images/IMG-20260617-WA0074.jpg"
       ]
     }
   ],
