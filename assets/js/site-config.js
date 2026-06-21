@@ -1,7 +1,7 @@
 window.MED_CONFIG = {
   defaultLanguage: "en",
   defaultTheme: "light",
-  settingsVersion: "booking-contact-social-v34",
+  settingsVersion: "booking-contact-social-v40",
   company: {
     name: "Mohamed Eslam Design",
     shortName: "MED",
@@ -52,14 +52,6 @@ window.MED_CONFIG = {
   },
   heroImages: [
     {
-      src: "./assets/images/IMG-20260617-WA0043.jpg",
-      position: "center 48%",
-      alt: {
-        en: "Completed furnished living room with media wall and refined seating",
-        ar: "غرفة معيشة مكتملة بالفرش وحائط تلفزيون وتفاصيل راقية"
-      }
-    },
-    {
       src: "./assets/images/IMG-20260617-WA0079.jpg",
       position: "center 42%",
       alt: {
@@ -81,6 +73,14 @@ window.MED_CONFIG = {
       alt: {
         en: "Kitchen and storage execution with hidden lighting",
         ar: "تنفيذ مطبخ وتخزين بإضاءة مخفية"
+      }
+    },
+    {
+      src: "./assets/images/IMG-20260617-WA0043.jpg",
+      position: "center 48%",
+      alt: {
+        en: "Completed furnished living room with media wall and refined seating",
+        ar: "غرفة معيشة مكتملة بالفرش وحائط تلفزيون وتفاصيل راقية"
       }
     }
   ],
