@@ -733,6 +733,7 @@
           form.elements.date.value = state.selectedDate;
           form.elements.slot.value = "";
         }
+        clearBookingErrors(form);
         renderCalendar();
         renderSlots();
       });
@@ -769,6 +770,7 @@
       button.addEventListener("click", () => {
         state.selectedSlot = button.dataset.slot || "";
         if (form) form.elements.slot.value = state.selectedSlot;
+        clearBookingErrors(form);
         renderSlots();
       });
     });
@@ -794,10 +796,11 @@
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const status = $("[data-form-status]");
-      const submit = $(".submit-button", form);
-      if (!form.checkValidity() || !form.elements.date.value || !form.elements.slot.value) {
-        form.reportValidity();
-        status.textContent = t("form.required");
+      const submit = $(".submit-button[form='bookingForm']") || $(".submit-button", form);
+      const missing = getMissingBookingField(form);
+      if (missing) {
+        showBookingError(form, missing);
+        status.textContent = missing.message;
         status.classList.remove("is-success");
         return;
       }
@@ -816,6 +819,89 @@
         refreshIcons();
       }, 900);
     });
+
+    form.addEventListener("input", (event) => {
+      clearFieldError(event.target);
+    });
+
+    form.addEventListener("change", (event) => {
+      clearFieldError(event.target);
+    });
+  }
+
+  function getMissingBookingField(form) {
+    const requiredControls = $$("[required]", form)
+      .filter((control) => control.type !== "hidden");
+    const missingControl = requiredControls.find((control) => !String(control.value || "").trim());
+
+    if (missingControl) {
+      const label = getFieldLabel(missingControl);
+      return {
+        type: "field",
+        element: missingControl,
+        message: formatText(t("form.missingField") || t("form.required"), { field: label })
+      };
+    }
+
+    if (!form.elements.date.value) {
+      return {
+        type: "date",
+        element: $("[data-calendar-grid]"),
+        message: t("form.missingDate") || t("form.required")
+      };
+    }
+
+    if (!form.elements.slot.value) {
+      return {
+        type: "slot",
+        element: $("[data-slot-grid]"),
+        message: t("form.missingSlot") || t("form.required")
+      };
+    }
+
+    return null;
+  }
+
+  function showBookingError(form, missing) {
+    clearBookingErrors(form);
+    const target = missing.element;
+
+    if (missing.type === "field") {
+      target.setAttribute("aria-invalid", "true");
+      target.closest("label")?.classList.add("is-invalid");
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    const panel = missing.type === "date" ? $(".calendar-panel") : $(".slot-panel");
+    panel?.classList.add("is-invalid");
+    (target || panel)?.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function clearBookingErrors(form) {
+    if (!form) return;
+    $$("[aria-invalid='true']", form).forEach((control) => control.removeAttribute("aria-invalid"));
+    $$("label.is-invalid", form).forEach((label) => label.classList.remove("is-invalid"));
+    $(".calendar-panel")?.classList.remove("is-invalid");
+    $(".slot-panel")?.classList.remove("is-invalid");
+  }
+
+  function clearFieldError(field) {
+    if (!field?.closest) return;
+    field.removeAttribute("aria-invalid");
+    field.closest("label")?.classList.remove("is-invalid");
+  }
+
+  function getFieldLabel(field) {
+    return field.closest("label")?.querySelector("span")?.textContent.trim() || field.name || t("form.required");
+  }
+
+  function formatText(template, replacements) {
+    return Object.entries(replacements || {}).reduce(
+      (text, [key, value]) => text.replaceAll(`{${key}}`, value),
+      template || ""
+    );
   }
 
   function buildWhatsAppUrl(formData) {

@@ -1,7 +1,7 @@
 window.MED_CONFIG = {
   defaultLanguage: "en",
   defaultTheme: "light",
-  settingsVersion: "booking-contact-social-v29",
+  settingsVersion: "booking-contact-social-v30",
   company: {
     name: "Mohamed Eslam Design",
     shortName: "MED",
@@ -402,6 +402,9 @@ window.MED_CONFIG = {
         send: "Send via WhatsApp",
         preparing: "Preparing WhatsApp message...",
         required: "Please complete the required fields and choose a date and time.",
+        missingField: "Please complete: {field}.",
+        missingDate: "Please choose a preferred date from the calendar.",
+        missingSlot: "Please choose a preferred time slot.",
         success: "WhatsApp is opening with the full request details.",
         unitOptions: ["Apartment", "Villa", "Office", "Commercial", "Other"],
         requestOptions: ["Design only", "Design & Execution", "Execution only", "Inspection request"],
@@ -552,6 +555,9 @@ window.MED_CONFIG = {
         send: "إرسال عبر واتساب",
         preparing: "جاري تجهيز رسالة واتساب...",
         required: "من فضلك أكمل الحقول المطلوبة واختر اليوم والميعاد.",
+        missingField: "من فضلك أكمل حقل: {field}.",
+        missingDate: "من فضلك اختر اليوم المطلوب من التقويم.",
+        missingSlot: "من فضلك اختر الميعاد المطلوب.",
         success: "سيتم فتح واتساب بكل تفاصيل الطلب.",
         unitOptions: ["شقة", "فيلا", "مكتب", "تجاري", "أخرى"],
         requestOptions: ["تصميم فقط", "تصميم وتنفيذ", "تنفيذ فقط", "طلب معاينة"],

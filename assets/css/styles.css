@@ -1724,6 +1724,25 @@ textarea:focus {
   min-height: 56px;
 }
 
+.booking-submit-panel {
+  margin-top: var(--s4);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--border);
+}
+
+label.is-invalid input,
+label.is-invalid select,
+label.is-invalid textarea {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.16);
+}
+
+.calendar-panel.is-invalid .calendar-grid,
+.slot-panel.is-invalid .slot-grid {
+  outline: 1px solid var(--gold);
+  outline-offset: 6px;
+}
+
 .calendar-head {
   display: flex;
   align-items: center;

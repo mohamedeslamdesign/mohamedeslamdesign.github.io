@@ -9,10 +9,10 @@
     <link rel="icon" href="./assets/images/med-logo-icon.png" type="image/png">
     <link rel="apple-touch-icon" href="./assets/images/med-logo-icon.png">
     <link rel="preload" href="./assets/images/IMG-20260617-WA0043.jpg" as="image">
-    <link rel="stylesheet" href="./assets/css/styles.css?v=booking-contact-social-v29">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=booking-contact-social-v30">
     <script defer src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script defer src="./assets/js/site-config.js?v=booking-contact-social-v29"></script>
-    <script defer src="./assets/js/main.js?v=booking-contact-social-v29"></script>
+    <script defer src="./assets/js/site-config.js?v=booking-contact-social-v30"></script>
+    <script defer src="./assets/js/main.js?v=booking-contact-social-v30"></script>
   </head>
   <body>
     <div class="page-loader" data-loader aria-hidden="true">
@@ -204,11 +204,6 @@
             <input name="date" type="hidden" required>
             <input name="slot" type="hidden" required>
 
-            <div class="form-status" data-form-status aria-live="polite"></div>
-            <button class="primary-button submit-button" type="submit">
-              <i data-lucide="send"></i>
-              <span data-i18n="form.send">Send via WhatsApp</span>
-            </button>
           </form>
 
           <aside class="calendar-panel" aria-label="Inspection calendar">
@@ -226,6 +221,13 @@
             <div class="slot-panel">
               <p class="slot-title" data-i18n="booking.slotsTitle">Available time slots</p>
               <div class="slot-grid" data-slot-grid></div>
+            </div>
+            <div class="booking-submit-panel">
+              <div class="form-status" data-form-status aria-live="polite"></div>
+              <button class="primary-button submit-button" type="submit" form="bookingForm">
+                <i data-lucide="send"></i>
+                <span data-i18n="form.send">Send via WhatsApp</span>
+              </button>
             </div>
           </aside>
           </div>
