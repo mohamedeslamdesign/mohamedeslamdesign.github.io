@@ -1,7 +1,7 @@
 window.MED_CONFIG = {
-  defaultLanguage: "ar",
+  defaultLanguage: "en",
   defaultTheme: "light",
-  settingsVersion: "booking-contact-social-v28",
+  settingsVersion: "booking-contact-social-v29",
   company: {
     name: "Mohamed Eslam Design",
     shortName: "MED",
@@ -52,11 +52,11 @@ window.MED_CONFIG = {
   },
   heroImages: [
     {
-      src: "./assets/images/IMG-20260617-WA0034.jpg",
-      position: "center center",
+      src: "./assets/images/IMG-20260617-WA0043.jpg",
+      position: "center 48%",
       alt: {
-        en: "Finished apartment with architectural ceiling lighting and polished floors",
-        ar: "شقة منفذة بإضاءة معمارية في السقف وأرضيات لامعة"
+        en: "Completed furnished living room with media wall and refined seating",
+        ar: "غرفة معيشة مكتملة بالفرش وحائط تلفزيون وتفاصيل راقية"
       }
     },
     {
@@ -168,13 +168,10 @@ window.MED_CONFIG = {
     { key: "kitchen", label: { en: "Kitchens", ar: "مطابخ" } },
     { key: "bathroom", label: { en: "Bathrooms", ar: "حمامات" } },
     { key: "detail", label: { en: "Details", ar: "تفاصيل" } },
-    { key: "profile", label: { en: "Mohamed Eslam", ar: "محمد إسلام" } },
     { key: "all", label: { en: "All", ar: "الكل" } }
   ],
   portfolio: [
-    { category: "fitout", featured: true, image: "./assets/images/IMG-20260617-WA0034.jpg", title: { en: "Open Reception Finishing", ar: "تشطيب ريسبشن مفتوح" }, meta: { en: "Apartment | Lighting | Marble finish", ar: "شقة | إضاءة | تشطيب رخام" } },
     { category: "living", featured: true, image: "./assets/images/IMG-20260617-WA0079.jpg", title: { en: "Living & Dining Completion", ar: "تنفيذ معيشة وسفرة" }, meta: { en: "Residential | Design & Build", ar: "سكني | تصميم وتنفيذ" } },
-    { category: "profile", featured: true, image: "./assets/images/IMG-20260617-WA0030.jpg", title: { en: "Mohamed Eslam", ar: "محمد إسلام" }, meta: { en: "Founder | Interior Designer", ar: "المؤسس | مصمم داخلي" } },
     { category: "kitchen", featured: true, image: "./assets/images/IMG-20260617-WA0073.jpg", title: { en: "Integrated Kitchen View", ar: "منظور مطبخ متكامل" }, meta: { en: "Kitchen | Hidden lighting", ar: "مطبخ | إضاءة مخفية" } },
     { category: "bathroom", featured: true, image: "./assets/images/IMG-20260617-WA0031.jpg", title: { en: "Kitchen & Bathroom Axis", ar: "محور مطبخ وحمام" }, meta: { en: "Fit-out | Wet areas", ar: "تشطيبات | مناطق رطبة" } },
     { category: "bathroom", featured: true, image: "./assets/images/IMG-20260617-WA0032.jpg", title: { en: "Marble Bathroom Detail", ar: "تفاصيل حمام رخامي" }, meta: { en: "Bathroom | Material execution", ar: "حمام | تنفيذ خامات" } },
@@ -192,15 +189,11 @@ window.MED_CONFIG = {
     { category: "living", image: "./assets/images/IMG-20260617-WA0045.jpg", title: { en: "Living Room Side Angle", ar: "زاوية جانبية للمعيشة" }, meta: { en: "Living | Finished space", ar: "معيشة | مساحة مكتملة" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0046.jpg", title: { en: "Wall Wash Lighting", ar: "إضاءة حوائط خطية" }, meta: { en: "Fit-out | Light design", ar: "تشطيبات | تصميم إضاءة" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0047.jpg", title: { en: "Minimal Wall Finish", ar: "تشطيب حائط هادئ" }, meta: { en: "Fit-out | Clean delivery", ar: "تشطيبات | تسليم نظيف" } },
-    { category: "fitout", image: "./assets/images/IMG-20260617-WA0049.jpg", title: { en: "Site Follow-up Moment", ar: "متابعة تنفيذ بالموقع" }, meta: { en: "Site | Engineering follow-up", ar: "موقع | متابعة هندسية" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0050.jpg", title: { en: "Corridor Door Finish", ar: "تشطيب ممر وأبواب" }, meta: { en: "Fit-out | Doors & walls", ar: "تشطيبات | أبواب وحوائط" } },
     { category: "fitout", image: "./assets/images/IMG-20260617-WA0051.jpg", title: { en: "Wide Finished Hall", ar: "صالة واسعة منفذة" }, meta: { en: "Fit-out | Final delivery", ar: "تشطيبات | تسليم نهائي" } },
     { category: "kitchen", image: "./assets/images/IMG-20260617-WA0054.jpg", title: { en: "Bar & Kitchen Detail", ar: "تفاصيل بار ومطبخ" }, meta: { en: "Kitchen | Counter lighting", ar: "مطبخ | إضاءة كاونتر" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0059.jpg", title: { en: "Bedroom TV Wall", ar: "حائط تلفزيون غرفة نوم" }, meta: { en: "Bedroom | Storage", ar: "غرفة نوم | تخزين" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0060.jpg", title: { en: "Bedroom & Dressing", ar: "غرفة نوم ودريسنج" }, meta: { en: "Bedroom | Wardrobe lighting", ar: "غرفة نوم | إضاءة دولاب" } },
-    { category: "profile", image: "./assets/images/IMG-20260617-WA0070.jpg", title: { en: "Studio Brand Banner", ar: "بانر هوية الاستوديو" }, meta: { en: "Brand | Mohamed Eslam", ar: "هوية | محمد إسلام" } },
-    { category: "profile", image: "./assets/images/IMG-20260617-WA0071.jpg", title: { en: "Mohamed Eslam Portrait", ar: "بورتريه محمد إسلام" }, meta: { en: "Founder | Brand image", ar: "المؤسس | صورة هوية" } },
-    { category: "profile", image: "./assets/images/IMG-20260617-WA0074.jpg", title: { en: "Black & White Portrait", ar: "بورتريه أبيض وأسود" }, meta: { en: "Founder | Editorial", ar: "المؤسس | صورة تحريرية" } },
     { category: "bathroom", image: "./assets/images/IMG-20260617-WA0077.jpg", title: { en: "Bathroom Warm Detail", ar: "تفاصيل حمام دافئة" }, meta: { en: "Bathroom | Niche lighting", ar: "حمام | إضاءة داخلية" } },
     { category: "bedroom", featured: true, image: "./assets/images/IMG-20260617-WA0082.jpg", title: { en: "Master Bedroom Suite", ar: "غرفة نوم رئيسية" }, meta: { en: "Bedroom | Interior design", ar: "غرفة نوم | تصميم داخلي" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0083.jpg", title: { en: "Bedroom Media Wall", ar: "حائط تلفزيون غرفة نوم" }, meta: { en: "Bedroom | Curtains & wall", ar: "غرفة نوم | ستائر وحائط" } },
@@ -214,8 +207,7 @@ window.MED_CONFIG = {
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0099.jpg", title: { en: "Bedroom Wardrobe View", ar: "منظور دولاب غرفة نوم" }, meta: { en: "Bedroom | Wardrobe", ar: "غرفة نوم | دولاب" } },
     { category: "bedroom", image: "./assets/images/IMG-20260617-WA0101.jpg", title: { en: "Bedroom Wardrobe Direction", ar: "تصميم دولاب وغرفة نوم" }, meta: { en: "Bedroom | Storage", ar: "غرفة نوم | تخزين" } },
     { category: "kitchen", featured: true, image: "./assets/images/IMG-20260617-WA0103.jpg", title: { en: "Kitchen Island Lighting", ar: "إضاءة جزيرة المطبخ" }, meta: { en: "Kitchen | Island", ar: "مطبخ | جزيرة" } },
-    { category: "bathroom", image: "./assets/images/IMG-20260617-WA0105.jpg", title: { en: "Bathroom Corridor Detail", ar: "تفاصيل حمام وممر" }, meta: { en: "Bathroom | Wood & stone", ar: "حمام | خشب وحجر" } },
-    { category: "profile", image: "./assets/images/IMG-20260617-WA0107.jpg", title: { en: "Mohamed Eslam On Site", ar: "محمد إسلام داخل الموقع" }, meta: { en: "Founder | Project visit", ar: "المؤسس | زيارة مشروع" } }
+    { category: "bathroom", image: "./assets/images/IMG-20260617-WA0105.jpg", title: { en: "Bathroom Corridor Detail", ar: "تفاصيل حمام وممر" }, meta: { en: "Bathroom | Wood & stone", ar: "حمام | خشب وحجر" } }
   ],
   portfolioStories: [
     {
@@ -231,7 +223,7 @@ window.MED_CONFIG = {
         ar: ["خطوط سقف", "أرضيات لامعة", "تسليم نظيف"]
       },
       images: [
-        "./assets/images/IMG-20260617-WA0034.jpg",
+        "./assets/images/IMG-20260617-WA0051.jpg",
         "./assets/images/IMG-20260617-WA0035.jpg",
         "./assets/images/IMG-20260617-WA0036.jpg",
         "./assets/images/IMG-20260617-WA0040.jpg"
@@ -312,25 +304,6 @@ window.MED_CONFIG = {
         "./assets/images/IMG-20260617-WA0033.jpg",
         "./assets/images/IMG-20260617-WA0077.jpg"
       ]
-    },
-    {
-      key: "founder-site",
-      label: { en: "Founder & Site", ar: "محمد والموقع" },
-      title: { en: "The person behind the follow-up.", ar: "الشخص وراء المتابعة." },
-      summary: {
-        en: "Mohamed Eslam appears as brand trust and site presence, not as a distracting hero background.",
-        ar: "محمد إسلام يظهر كحضور ثقة ومتابعة موقع، وليس كخلفية مشتتة في الهيرو."
-      },
-      proof: {
-        en: ["Founder presence", "Site follow-up", "Brand identity"],
-        ar: ["حضور المؤسس", "متابعة موقع", "هوية واضحة"]
-      },
-      images: [
-        "./assets/images/IMG-20260617-WA0030.jpg",
-        "./assets/images/IMG-20260617-WA0071.jpg",
-        "./assets/images/IMG-20260617-WA0074.jpg",
-        "./assets/images/IMG-20260617-WA0107.jpg"
-      ]
     }
   ],
   content: {
@@ -360,9 +333,9 @@ window.MED_CONFIG = {
         call: "Call"
       },
       hero: {
-        eyebrow: "We Build What Lasts",
-        title: "Finishing work that reflects your stature.",
-        copy: "We turn empty spaces into memorable living experiences through disciplined design, premium materials, and careful execution.",
+        eyebrow: "Signature Interiors & Fit-out",
+        title: "Finished spaces with presence, comfort, and precision.",
+        copy: "From concept and material selection to site execution, we create homes and commercial interiors that look refined, work beautifully, and feel ready to live in.",
         rail: ["A-Class materials", "Engineering follow-up", "Inspection to handover"]
       },
       about: {
@@ -377,8 +350,8 @@ window.MED_CONFIG = {
       },
       portfolio: {
         kicker: "Our Work",
-        title: "Selected project stories with a dedicated design portfolio.",
-        copy: "The homepage keeps a focused view of execution work, while the design portfolio opens the wider library of renders and concept directions."
+        title: "Real finished spaces, curated into clear project stories.",
+        copy: "The homepage focuses on furnished, completed work, while the design portfolio opens the wider render library organized by room type."
       },
       process: {
         kicker: "Process",
@@ -510,9 +483,9 @@ window.MED_CONFIG = {
         call: "اتصل"
       },
       hero: {
-        eyebrow: "نحن نبني ما يدوم",
-        title: "تشطيبات تعكس مكانتك.",
-        copy: "نحوّل الفراغات إلى تجارب حياة لا تُنسى من خلال تصميم منضبط، خامات راقية، وتنفيذ يعرف قيمة التفاصيل.",
+        eyebrow: "تصميم وتنفيذ داخلي احترافي",
+        title: "مساحات مكتملة بحضور وراحة وتفاصيل دقيقة.",
+        copy: "من التصور واختيار الخامات إلى التنفيذ داخل الموقع، نصنع منازل ومساحات تجارية راقية، عملية، وجاهزة للحياة اليومية.",
         rail: ["خامات A-Class", "متابعة هندسية", "من المعاينة إلى التسليم"]
       },
       about: {
@@ -527,8 +500,8 @@ window.MED_CONFIG = {
       },
       portfolio: {
         kicker: "أعمالنا",
-        title: "قصص مشاريع مختارة مع صفحة مستقلة للتصميمات.",
-        copy: "الصفحة الرئيسية تعرض خلاصة قوية من أعمال التنفيذ، وصفحة التصميمات تفتح مكتبة الرندرات والاتجاهات التصميمية بتصنيف أوضح."
+        title: "مساحات منفذة بالفعل، مرتبة في قصص مشاريع واضحة.",
+        copy: "الصفحة الرئيسية تركز على الأعمال المكتملة والمفروشة، وصفحة التصميمات تفتح مكتبة الرندرات بتصنيف منظم حسب نوع الغرفة."
       },
       process: {
         kicker: "آلية العمل",
