@@ -149,7 +149,9 @@
           kicker: "Marketplace Direction",
           title: "Giant is building a dedicated finishing marketplace in Egypt.",
           copy: "Finishing companies, suppliers, and contractors can apply to display their services, with documents, licenses, and portfolio quality reviewed before approval.",
-          contact: "Apply through technical support:"
+          contact: "Apply through WhatsApp support:",
+          whatsappAria: "Apply through WhatsApp technical support",
+          whatsapp: "Hello, I would like to apply to display my services on Giant Finishing."
         },
         cta: {
           kicker: "Download The App",
@@ -291,7 +293,9 @@
           kicker: "اتجاه السوق",
           title: "Giant يبني سوقا متخصصا للتشطيبات في مصر.",
           copy: "يمكن لشركات التشطيب والموردين والمقاولين التقديم لعرض خدماتهم، مع مراجعة الأوراق والتراخيص وجودة سابقة الأعمال قبل القبول.",
-          contact: "للتقديم من خلال الدعم الفني:"
+          contact: "للتقديم عبر واتساب الدعم الفني:",
+          whatsappAria: "التقديم عبر واتساب الدعم الفني",
+          whatsapp: "مرحبًا، أريد التقديم لعرض خدماتي على تطبيق Giant Finishing."
         },
         cta: {
           kicker: "تحميل التطبيق",
@@ -772,9 +776,11 @@
   }
 
   function renderWhatsAppLinks() {
-    const message = sc(`${pageKey()}.whatsapp`);
     $$("[data-whatsapp-link]").forEach((link) => {
-      link.href = `https://wa.me/${getWhatsAppNumber(config.contact?.whatsapp)}?text=${encodeURIComponent(message)}`;
+      const messageKey = link.dataset.whatsappMessage || `${pageKey()}.whatsapp`;
+      const message = sc(messageKey);
+      const number = link.dataset.whatsappNumber || config.contact?.whatsapp;
+      link.href = `https://wa.me/${getWhatsAppNumber(number)}?text=${encodeURIComponent(message)}`;
       link.target = "_blank";
       link.rel = "noopener";
     });

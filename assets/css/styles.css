@@ -3669,6 +3669,15 @@ html[dir="rtl"] .testimonial-card {
   background: var(--gold-tint);
   color: var(--text);
   font-weight: 700;
+  text-decoration: none;
+  transition: border-color var(--transition), transform var(--transition), background var(--transition);
+}
+
+.giant-contact-line:hover,
+.giant-contact-line:focus-visible {
+  border-color: var(--gold);
+  background: rgba(184, 127, 55, 0.18);
+  transform: translateY(-2px);
 }
 
 .gallery-screens {
